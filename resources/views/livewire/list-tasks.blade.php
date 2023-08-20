@@ -10,7 +10,13 @@
                     <thead>
                         <tr>
                             <th scope="col"
-                                class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Tasks</th>
+                                class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
+                                Tasks
+                            </th>
+                            <th scope="col"
+                                class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
+                                Status
+                            </th>
                             <th scope="col" class="flex flex-row-reverse py-3.5 pl-3 pr-4 sm:pr-0">
                                 <button type="button"
                                     class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
@@ -23,11 +29,20 @@
                         @foreach ($tasks as $task)
                             <tr>
                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                                    {{ $task->description }}</td>
+                                    {{ $task->description }}
+                                </td>
+                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-ms font-medium text-gray-900 sm:pl-0">
+                                    <div
+                                        class="align-middle inline-block h-4 w-4 rounded-full bg-blue-500"
+                                        @style('background-color: ' . $task->status->color)
+                                    ></div>
+                                    {{ $task->status->name }}
+                                </td>
                                 <td
                                     class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span
-                                            class="sr-only">{{ $task->description }}</span></a>
+                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">
+                                        Edit<span class="sr-only">{{ $task->description }}</span>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
