@@ -26,17 +26,25 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">
-                        @foreach ($tasks as $task)
-                            <tr>
+                        @foreach ($tasks as $index => $task)
+                            <tr wire:key="task-row-{{ $task->id }}">
                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                                     {{ $task->description }}
                                 </td>
                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-ms font-medium text-gray-900 sm:pl-0">
-                                    <div
-                                        class="align-middle inline-block h-4 w-4 rounded-full bg-blue-500"
-                                        @style('background-color: ' . $task->status->color)
-                                    ></div>
-                                    {{ $task->status->name }}
+                                    <div class="flex items-center">
+                                        <div class="align-middle inline-block h-4 w-4 rounded-full bg-blue-500"
+                                            style="background-color: {{ $task->status->color }}">
+                                        </div>
+                                        <select wire:model.live="tasks.{{ $index }}.status_id"
+                                            class="block w-100 px-3 py-2 text-base focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" />
+                                        @foreach ($statuses as $status)
+                                            <option data-content="" value="{{ $status->id }}">
+                                                {{ $status->name }}
+                                            </option>
+                                        @endforeach
+                                    </div>
+                                    </select>
                                 </td>
                                 <td
                                     class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
