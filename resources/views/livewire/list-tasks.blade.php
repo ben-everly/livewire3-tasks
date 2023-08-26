@@ -9,21 +9,23 @@
                 <table class="min-w-full divide-y divide-gray-300">
                     <thead>
                         <tr>
-                            <th scope="col"
-                                class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
+                            <th class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                                scope="col">
                                 Id
-                            </td>
-                            <th scope="col"
-                                class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
+                                </td>
+                            <th class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                                scope="col">
                                 Description
                             </th>
-                            <th scope="col"
-                                class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
+                            <th class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                                scope="col">
                                 Status
                             </th>
-                            <th scope="col" class="flex flex-row-reverse py-3.5 pl-3 pr-4 sm:pr-0">
-                                <button type="button"
-                                    class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                            <th class="flex flex-row-reverse py-3.5 pl-3 pr-4 sm:pr-0"
+                                scope="col">
+                                <button
+                                    class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                    type="button">
                                     Add Task
                                 </button>
                             </th>
@@ -38,12 +40,13 @@
                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                                     {{ $task->description }}
                                 </td>
-                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-ms font-medium text-gray-900 sm:pl-0">
+                                <td class="text-ms whitespace-nowrap py-4 pl-4 pr-3 font-medium text-gray-900 sm:pl-0">
                                     <livewire:task-status-select :task="$task" />
                                 </td>
                                 <td
                                     class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">
+                                    <a class="text-indigo-600 hover:text-indigo-900"
+                                        href="#">
                                         Edit<span class="sr-only">{{ $task->description }}</span>
                                     </a>
                                 </td>
