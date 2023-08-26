@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Status;
 use App\Models\Task;
+use App\Models\Team;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,11 +16,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Status::factory()
-            ->count(4)
+        Team::factory()
+            ->count(3)
             ->create()
-            ->each(function (Status $status) {
-                Task::factory()->count(3)->for($status)->create();
+            ->each(function (Team $team) {
+                Status::factory()
+                    ->count(4)
+                    ->for($team)
+                    ->create()
+                    ->each(function (Status $status) use ($team) {
+                        Task::factory()->count(3)->for($team)->for($status)->create();
+                    });
             });
     }
 }

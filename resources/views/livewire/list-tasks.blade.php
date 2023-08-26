@@ -11,7 +11,11 @@
                         <tr>
                             <th scope="col"
                                 class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
-                                Tasks
+                                Id
+                            </td>
+                            <th scope="col"
+                                class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
+                                Description
                             </th>
                             <th scope="col"
                                 class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
@@ -28,6 +32,9 @@
                     <tbody class="divide-y divide-gray-200">
                         @foreach ($tasks as $index => $task)
                             <tr wire:key="task-row-{{ $task->id }}">
+                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                                    {{ $task->team->abbreviation }}-{{ $task->number }}
+                                </td>
                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                                     {{ $task->description }}
                                 </td>

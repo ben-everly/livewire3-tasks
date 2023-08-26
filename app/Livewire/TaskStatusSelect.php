@@ -14,6 +14,7 @@ class TaskStatusSelect extends Component
 {
     public int $id;
     public int $status_id;
+    public int $team_id;
 
     public function rules(): array
     {
@@ -29,7 +30,7 @@ class TaskStatusSelect extends Component
 
     public function getStatusesProperty(): Collection
     {
-        return Status::all();
+        return Status::where('team_id', $this->team_id)->get();
     }
 
     public function updatedStatusId()
