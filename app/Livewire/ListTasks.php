@@ -8,12 +8,15 @@ use Livewire\Component;
 
 class ListTasks extends Component
 {
+    public int $team_id;
     /** @var Collection<int, Task> */
     public Collection $tasks;
 
     public function mount()
     {
-        $this->tasks = Task::orderBy('id')->get();
+        $this->tasks = Task::where('team_id', $this->team_id)
+            ->orderBy('id')
+            ->get();
     }
 
     public function render()

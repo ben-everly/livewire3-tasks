@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', \App\Livewire\ListTasks::class);
+Route::get('/team/{team_id}', \App\Livewire\ListTasks::class)->name('team.tasks');
