@@ -6,17 +6,17 @@
             alt="Your Company">
     </div>
     <nav class="flex flex-1 flex-col">
-        <div class="text-xs font-semibold text-slate-400 leading-6">Your teams</div>
+        <div class="text-xs font-semibold leading-6 text-slate-400">Your teams</div>
         <ul class="space-y-1"
             role="list">
             @foreach (\App\Models\Team::all() as $team)
                 <li>
                     <a href="/team/{{ $team->id }}"
                         @class([
-                            'group flex gap-x-3 rounded-md p-2 font-semibold',
-                            'bg-slate-50 text-indigo-600' =>
+                            'group flex gap-x-3 items-center rounded-md p-2 font-semibold',
+                            'text-indigo-600' =>
                                 request()->route()->parameter('team_id') == $team->id, //current
-                            'hover:text-indigo-600 hover:bg-slate-50' =>
+                            'hover:text-indigo-600' =>
                                 request()->route()->parameter('team_id') != $team->id,
                         ])>
                         <x-icons.folder @class([

@@ -60,7 +60,7 @@
                         </div>
 
                         <!-- Dynamic sidebar for mobile -->
-                        <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-2">
+                        <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-2 dark:bg-slate-700">
                             <x-sidebar />
                         </div>
                     </div>
@@ -69,13 +69,14 @@
 
             <!-- Static sidebar for desktop -->
             <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-64 lg:flex-col">
-                <div class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-slate-300 bg-white px-6">
+                <div class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-slate-300 bg-white px-6 dark:bg-slate-700 dark:border-slate-600">
                     <x-sidebar showProfile="true" />
                 </div>
             </div>
 
-            <div class="sticky top-0 z-40 flex items-center gap-x-6 bg-white border-b border-slate-200 px-4 py-4 sm:px-6 lg:hidden">
-                <button class="-m-2.5 lg:hidden text-slate-700"
+            <div
+                class="sticky top-0 z-40 flex items-center gap-x-6 border-b border-slate-200 bg-white px-4 py-4 dark:bg-slate-700 dark:border-slate-600 sm:px-6 lg:hidden">
+                <button class="-m-2.5 text-slate-700 lg:hidden dark:text-slate-400"
                     type="button"
                     x-on:click="menuExpanded = true">
                     <span class="sr-only">Open sidebar</span>
@@ -91,7 +92,8 @@
                     </svg>
                 </button>
                 <div class="flex-1 font-semibold leading-6">Dashboard</div>
-                <a href="#" class="rounded-full">
+                <a class="rounded-full"
+                    href="#">
                     <span class="sr-only">Your profile</span>
                     <img class="h-8 w-8 rounded-full bg-slate-50"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
