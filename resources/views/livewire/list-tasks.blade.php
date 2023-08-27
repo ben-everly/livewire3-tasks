@@ -1,60 +1,48 @@
-<div class="px-4 sm:px-6 lg:px-8">
-    <div class="sm:flex sm:items-center">
-        <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-        </div>
-    </div>
-    <div class="mt-8 flow-root">
-        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-                <table class="min-w-full divide-y divide-gray-300">
-                    <thead>
-                        <tr>
-                            <th class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
-                                scope="col">
-                                Id
-                                </td>
-                            <th class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
-                                scope="col">
-                                Description
-                            </th>
-                            <th class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
-                                scope="col">
-                                Status
-                            </th>
-                            <th class="flex flex-row-reverse py-3.5 pl-3 pr-4 sm:pr-0"
-                                scope="col">
-                                <button
-                                    class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                    type="button">
-                                    Add Task
-                                </button>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        @foreach ($tasks as $index => $task)
-                            <tr wire:key="task-row-{{ $task->id }}">
-                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                                    {{ $task->team->abbreviation }}-{{ $task->number }}
-                                </td>
-                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                                    {{ $task->description }}
-                                </td>
-                                <td class="text-ms whitespace-nowrap py-4 pl-4 pr-3 font-medium text-gray-900 sm:pl-0">
-                                    <livewire:task-status-select :task="$task" />
-                                </td>
-                                <td
-                                    class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                                    <a class="text-indigo-600 hover:text-indigo-900"
-                                        href="#">
-                                        Edit<span class="sr-only">{{ $task->description }}</span>
-                                    </a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+<div class="min-w-full px-4 py-4 align-middle">
+    <table class="min-w-full">
+        <thead>
+            <tr>
+                <th class="p-2"
+                    scope="col">
+                    Id
+                    </td>
+                <th class="p-2"
+                    scope="col">
+                    Description
+                </th>
+                <th class="p-2"
+                    scope="col">
+                    Status
+                </th>
+                <th class="flex flex-row-reverse p-2"
+                    scope="col">
+                    <button class="bg-indigo-600 text-slate-50 hover:bg-indigo-700"
+                        type="button">
+                        Add Task
+                    </button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($tasks as $index => $task)
+                <tr wire:key="task-row-{{ $task->id }}">
+                    <td class="whitespace-nowrap p-2 font-medium">
+                        {{ $task->team->abbreviation }}-{{ $task->number }}
+                    </td>
+                    <td class="p-2 font-medium">
+                        {{ $task->description }}
+                    </td>
+                    <td class="whitespace-nowrap p-2 font-medium">
+                        <livewire:task-status-select :task="$task" />
+                    </td>
+                    <td class="relative whitespace-nowrap p-2 text-right font-medium">
+                        <a class="text-indigo-600 hover:text-indigo-900"
+                            href="#">
+                            Edit<span class="sr-only">{{ $task->description }}</span>
+                        </a>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>
