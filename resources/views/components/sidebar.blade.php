@@ -9,7 +9,7 @@
         <div class="text-xs font-semibold leading-6 text-slate-400">Your teams</div>
         <ul class="space-y-1"
             role="list">
-            @foreach (\App\Models\Team::all() as $team)
+            @foreach (auth()->user()->teams as $team)
                 <li>
                     <a href="/team/{{ $team->id }}"
                         @class([

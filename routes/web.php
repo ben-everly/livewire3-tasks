@@ -13,4 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/team/{team_id}', \App\Livewire\ListTasks::class)->name('team.tasks');
+Route::middleware('auth')->group(function () {
+    Route::get('/team/{team_id}', \App\Livewire\ListTasks::class)->name('team.tasks');
+});
+Route::get('/login', \App\Livewire\Login::class)->name('login');

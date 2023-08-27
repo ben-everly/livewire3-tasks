@@ -1,4 +1,4 @@
-<div class="min-w-full px-4 py-4 align-middle">
+<div class="min-w-full align-middle">
     <table class="min-w-full">
         <thead>
             <tr>

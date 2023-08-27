@@ -102,7 +102,7 @@
             </div>
 
             <main class="lg:pl-64">
-                <div class="px-4">
+                <div class="px-4 py-4">
                     {{ $slot }}
                 </div>
             </main>
