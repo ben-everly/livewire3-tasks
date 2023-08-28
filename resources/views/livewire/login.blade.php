@@ -1,5 +1,5 @@
 <div>
-    <form class="m-auto flex max-w-sm flex-col gap-6 rounded-xl bg-white p-8 shadow-lg"
+    <form class="mt-8 m-auto flex max-w-sm flex-col gap-6 rounded-xl bg-white p-8 shadow-lg"
         wire:submit.prevent="login">
         <h2>Login</h2>
         <input id="email"
