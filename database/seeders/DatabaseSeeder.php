@@ -17,19 +17,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
+        $user = User::factory()->create([
             'email' => 'test@localhost'
         ]);
         Team::factory()
             ->count(3)
             ->create()
-            ->each(function (Team $team) {
+            ->each(function (Team $team) use ($user) {
                 Status::factory()
                     ->count(4)
                     ->for($team)
                     ->create()
-                    ->each(function (Status $status) use ($team) {
-                        Task::factory()->count(3)->for($team)->for($status)->create();
+                    ->each(function (Status $status) use ($team, $user) {
+                        Task::factory()
+                            ->count(3)
+                            ->for($team)
+                            ->for($status)
+                            ->for($user)
+                            ->create();
                     });
             });
     }
