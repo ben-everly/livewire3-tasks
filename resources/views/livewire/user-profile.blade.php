@@ -1,7 +1,7 @@
 <form class="m-auto flex max-w-lg flex-col gap-4"
     wire:submit="save">
     <label for="name">
-        Name:
+        <div>Name:</div>
         <input id="name"
             type="text"
             wire:model="name" />
@@ -10,7 +10,7 @@
         <p class="text-red-500">{{ $message }}</p>
     @enderror
     <label for="email">
-        Email:
+        <div>Email:</div>
         <input id="email"
             type="text"
             wire:model="email" />

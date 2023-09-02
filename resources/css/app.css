@@ -13,7 +13,7 @@
     input {
         @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
             focus-visible:outline-indigo-600 rounded-xl p-2 border border-slate-400
-            bg-transparent
+            bg-transparent dark:border-slate-600
     }
     input[type='submit'] {
         @apply border-0 font-medium
@@ -21,7 +21,7 @@
     select {
         @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
             focus-visible:outline-indigo-600 bg-transparent border-slate-300 border rounded-xl
-            p-2
+            p-2 dark:border-slate-600
     }
     h1 {
         @apply text-3xl font-semibold
@@ -40,9 +40,9 @@
         @apply font-semibold text-left
     }
     table {
-        @apply divide-y divide-slate-300
+        @apply divide-y divide-slate-300 dark:divide-slate-700
     }
     tbody {
-        @apply divide-y divide-slate-300
+        @apply divide-y divide-slate-300 dark:divide-slate-700
     }
 }
