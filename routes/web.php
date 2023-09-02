@@ -15,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
     Route::get('/team/{team_id}', \App\Livewire\ListTasks::class)->name('team.tasks');
+    Route::get('/profile', \App\Livewire\UserProfile::class)->name('profile');
 });
 Route::get('/login', \App\Livewire\Login::class)->name('login');

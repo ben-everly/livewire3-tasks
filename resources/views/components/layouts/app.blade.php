@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html class="h-full"
+<html @class([
+        "h-full",
+        "dark" => auth()->user()->dark_mode,
+    ])
     lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
     <head>
@@ -93,7 +96,7 @@
                 </button>
                 <div class="flex-1 font-semibold leading-6">Dashboard</div>
                 <a class="rounded-full"
-                    href="#">
+                    href="{{ route('profile') }}">
                     <span class="sr-only">Your profile</span>
                     <img class="h-8 w-8 rounded-full bg-slate-50"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"

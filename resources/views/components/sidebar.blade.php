@@ -31,7 +31,7 @@
             @if ($showProfile)
                 <li class="absolute bottom-2">
                     <a class="flex items-center gap-x-3 rounded-md p-2 font-semibold leading-6 hover:bg-slate-200"
-                        href="#">
+                        href="{{ route('profile') }}">
                         <img class="h-8 w-8 rounded-full"
                             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                             alt="">
