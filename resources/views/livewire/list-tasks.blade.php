@@ -16,9 +16,10 @@
                 </th>
                 <th class="flex flex-row-reverse p-2"
                     scope="col">
-                    <button class="bg-indigo-600 text-slate-50 hover:bg-indigo-700"
-                        type="button">
-                        Add Task
+                    <button class="rounded-full bg-indigo-600 p-1 text-slate-50 hover:bg-indigo-700"
+                        type="button"
+                        wire:click="createTask">
+                        <x-icons.plus-circle />
                     </button>
                 </th>
             </tr>

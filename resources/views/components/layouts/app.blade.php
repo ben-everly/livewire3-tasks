@@ -110,6 +110,7 @@
                 </div>
             </main>
         </div>
+        <livewire:modal />
     </body>
 
 </html>
