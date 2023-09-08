@@ -2,8 +2,8 @@
 
 namespace App\Livewire;
 
-use App\Models\Status;
 use App\Models\Task;
+use App\Models\Team;
 use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 
@@ -30,7 +30,7 @@ class TaskStatusSelect extends Component
 
     public function getStatusesProperty(): Collection
     {
-        return Status::where('team_id', $this->team_id)->get();
+        return Team::find($this->team_id)->statuses;
     }
 
     public function updatedStatusId()
