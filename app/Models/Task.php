@@ -11,6 +11,12 @@ class Task extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'team_id',
+        'description',
+        'status_id',
+    ];
+
     protected function number(): Attribute
     {
         return Attribute::make(
