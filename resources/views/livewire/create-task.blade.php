@@ -38,14 +38,14 @@
         </label>
     </div>
     @if ($errors->any())
-        <div class="bg-red-200 m-2 rounded-md p-2">
+        <div class="m-2 rounded-md bg-red-200 p-2">
             @foreach ($errors->all() as $error)
                 <div class="text-red-900">{{ $error }}</div>
             @endforeach
         </div>
     @endif
     <div class="flex flex-row-reverse">
-        <button class="bg-indigo-600 hover:bg-indigo-700"
+        <button class="bg-indigo-600 text-slate-50 hover:bg-indigo-700"
             wire:click="save">
             Save
         </button>
