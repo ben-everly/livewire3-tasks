@@ -20,7 +20,7 @@
                         class="bg-slate-100 p-1 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
                         type="button"
                         wire:click="createTask">
-                        <x-icons.plus-circle />
+                        <x-icons.plus class="h-5 w-5" />
                     </button>
                 </th>
             </tr>
