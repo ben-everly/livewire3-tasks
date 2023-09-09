@@ -7,10 +7,11 @@ use App\Models\Task;
 use App\Models\Team;
 use Livewire\Component;
 
-class CreateTask extends Component
+class EditTask extends Component
 {
     use InteractsWithModal;
 
+    public ?int $task_id;
     public int $team_id;
     public string $description = '';
     public int $status_id;
@@ -22,8 +23,10 @@ class CreateTask extends Component
 
     public function mount(array $params)
     {
+        $this->task_id = $params['id'] ?? null;
         $this->team_id = $params['team_id'] ?? auth()->user()->teams->first()->id;
         $this->status_id = $this->team->statuses->first()->id;
+        $this->fill($params);
     }
 
     public function getTeamProperty()
@@ -34,7 +37,9 @@ class CreateTask extends Component
     public function save()
     {
         $this->validate();
-        Task::create([
+        Task::updateOrCreate([
+            'id' => $this->task_id,
+        ], [
             'team_id' => $this->team_id,
             'description' => $this->description,
             'status_id' => $this->status_id,
@@ -44,7 +49,7 @@ class CreateTask extends Component
 
     public function render()
     {
-        return view('livewire.create-task', [
+        return view('livewire.edit-task', [
             'teams' => auth()->user()->teams,
             'statuses' => $this->team->statuses,
         ]);

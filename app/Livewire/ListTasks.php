@@ -24,9 +24,14 @@ class ListTasks extends Component
 
     public function createTask()
     {
-        $this->openModal('create-task', [
+        $this->openModal('edit-task', [
             'team_id' => $this->team_id,
         ]);
+    }
+
+    public function editTask(Task $task)
+    {
+        $this->openModal('edit-task', $task->toArray());
     }
 
     public function render()

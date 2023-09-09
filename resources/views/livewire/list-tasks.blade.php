@@ -39,8 +39,9 @@
                     </td>
                     <td class="relative whitespace-nowrap p-2 text-right font-medium">
                         <a class="text-indigo-600 hover:text-indigo-900"
-                            href="#">
-                            Edit<span class="sr-only">{{ $task->description }}</span>
+                            wire:click="editTask({{ $task }})">
+                            Edit
+                            <span class="sr-only">{{ $task->description }}</span>
                         </a>
                     </td>
                 </tr>
