@@ -34,7 +34,8 @@
                         {{ $task->description }}
                     </td>
                     <td class="whitespace-nowrap p-2 font-medium">
-                        <livewire:task-status-select :task="$task" />
+                        <livewire:task-status-select wire:key="task-status-{{ $task->id }}"
+                            :task="$task" />
                     </td>
                     <td class="relative whitespace-nowrap p-2 text-right font-medium">
                         <a class="text-indigo-600 hover:text-indigo-900"
