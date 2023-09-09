@@ -11,7 +11,7 @@ class EditTask extends Component
 {
     use InteractsWithModal;
 
-    public ?int $task_id;
+    public ?int $task_id = null;
     public int $team_id;
     public string $description = '';
     public int $status_id;
@@ -44,6 +44,11 @@ class EditTask extends Component
             'description' => $this->description,
             'status_id' => $this->status_id,
         ]);
+        if ($this->task_id) {
+            $this->dispatch(Task::class . '.updated');
+        } else {
+            $this->dispatch(Task::class . '.created');
+        }
         $this->closeModal();
     }
 

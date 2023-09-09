@@ -11,6 +11,11 @@ class ListTasks extends Component
 {
     use InteractsWithModal;
 
+    protected $listeners = [
+        Task::class . '.created' => '$refresh',
+        Task::class . '.updated' => '$refresh',
+    ];
+
     public int $team_id;
     /** @var Collection<int, Task> */
     public Collection $tasks;
