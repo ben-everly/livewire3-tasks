@@ -15,8 +15,6 @@ class ListTasks extends Component
     /** @var Collection<int, Task> */
     public Collection $tasks;
 
-    public string $newDescription = '';
-
     public function mount()
     {
         $this->tasks = Task::where('team_id', $this->team_id)
