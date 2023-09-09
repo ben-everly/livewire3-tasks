@@ -38,11 +38,11 @@
                             :task="$task" />
                     </td>
                     <td class="relative whitespace-nowrap p-2 text-right font-medium">
-                        <a class="text-indigo-600 hover:text-indigo-900"
+                        <button class="text-slate-300 bg-slate-800 hover:bg-slate-700 p-1"
                             wire:click="editTask({{ $task }})">
-                            Edit
+                            <x-icons.pencil class="h-4 w-4" />
                             <span class="sr-only">{{ $task->description }}</span>
-                        </a>
+                        </button>
                     </td>
                 </tr>
             @endforeach
